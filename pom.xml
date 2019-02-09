@@ -18,6 +18,29 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>neo4j-contrib-releases</id>
+      <url>https://raw.github.com/neo4j-contrib/m2/master/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>neo4j-contrib-snapshots</id>
+      <url>https://raw.github.com/neo4j-contrib/m2/master/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -35,6 +58,22 @@
       <artifactId>graphhopper-reader-osm</artifactId>
       <version>0.11.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.neo4j</groupId>
+      <artifactId>neo4j</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.neo4j</groupId>
+        <artifactId>neo4j-spatial</artifactId>
+        <version>0.25.7-neo4j-3.4.9</version>
+    </dependency>
+    <dependency>
+        <groupId>org.neo4j.driver</groupId>
+        <artifactId>neo4j-java-driver</artifactId>
+        <version>1.7.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
