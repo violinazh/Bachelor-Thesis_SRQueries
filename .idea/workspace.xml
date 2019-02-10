@@ -1,47 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21227d07-add5-4677-ad79-d34b2120a860" name="Default Changelist" comment="Tested Neo4j">
-      <change afterPath="$PROJECT_DIR$/.attach_pid4333" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Test_GH.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.labeltokenstore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.labeltokenstore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.labeltokenstore.db.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.labeltokenstore.db.names.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.nodestore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.nodestore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.nodestore.db.labels" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.nodestore.db.labels.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.arrays" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.arrays.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.index.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.index.keys" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.index.keys.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.propertystore.db.strings.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshipgroupstore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshipgroupstore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshipstore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshipstore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshiptypestore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshiptypestore.db.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshiptypestore.db.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.relationshiptypestore.db.names.id" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.schemastore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neostore.schemastore.db.id" afterDir="false" />
+    <list default="true" id="21227d07-add5-4677-ad79-d34b2120a860" name="Default Changelist" comment="Worked on Dijkstra, implemented needed table creation functionality, tested with dummy nodes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/DijkstraAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/NearestNeighbor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/POI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/violina/Vertex.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/berlin.osm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/violina/TestDijkstraAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/violina/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/violina/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/violina/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/violina/App.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,19 +37,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+            <state relative-caret-position="290">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,11 +48,155 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Vertex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#231#232#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/POI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#715#716#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Graph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
+                <element signature="e#380#381#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/DijkstraAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1003#1004#0" expanded="true" />
+                <element signature="e#1029#1030#0" expanded="true" />
+                <element signature="e#2400#2408#0" expanded="true" />
+                <element signature="e#5515#5516#0" expanded="true" />
+                <element signature="e#3623#3631#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/violina/AppTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/violina/TestDijkstraAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="115" column="33" lean-forward="true" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#452#639#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/NearestNeighbor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding>
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#349#350#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#714#715#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>database</find>
+      <find>equals</find>
+      <find>hashCode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,6 +207,13 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/violina/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/Edge.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/Graph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/NearestNeighbor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/POI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/violina/DijkstraAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/violina/TestDijkstraAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -156,6 +267,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="violina" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Test_GH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test_GH" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Test_GH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test_GH" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Test_GH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test_GH" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="violina" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -167,12 +299,13 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549713066870" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549813318382" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Edit As Language" value="SQLite" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="/usr/lib/java/sqlite-jdbc.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -190,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestDijkstraAlgorithm">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.violina.App" />
       <module name="Test_GH" />
@@ -204,8 +337,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestDijkstraAlgorithm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test_GH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.violina.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.violina" />
+      <option name="MAIN_CLASS_NAME" value="com.violina.TestDijkstraAlgorithm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestDijkstraAlgorithm" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -236,7 +384,7 @@
       <workItem from="1547127691649" duration="3733000" />
       <workItem from="1547307035459" duration="1854000" />
       <workItem from="1548583763098" duration="3170000" />
-      <workItem from="1549207231254" duration="6927000" />
+      <workItem from="1549207231254" duration="29411000" />
     </task>
     <task id="LOCAL-00001" summary="Just committed through IntelliJ">
       <created>1543591299387</created>
@@ -245,16 +393,55 @@
       <option name="project" value="LOCAL" />
       <updated>1543591299387</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tested Neo4j">
+      <created>1549713109981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549713109981</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 12m 43s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 18m 50s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 21m 33s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 25m 57s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 35m 02s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 36m 21s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 37m 35s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 39m 19s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 39m 44s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDijkstraAlgorithm - 2019.02.10 at 16h 40m 10s.xml">
+      <configuration name="TestDijkstraAlgorithm" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67528000" />
+    <option name="totallyTimeSpent" value="90012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.030758226" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09728183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -263,7 +450,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18790218" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23166023" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924472" weight="0.398374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,7 +459,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3398374" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007553" side_tool="true" weight="0.398374" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.21621622" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.21621622" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3284553" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -293,7 +480,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just committed through IntelliJ" />
     <MESSAGE value="Tested Neo4j" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested Neo4j" />
+    <MESSAGE value="Worked on Dijkstra, implemented needed table creation functionality, tested with dummy nodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on Dijkstra, implemented needed table creation functionality, tested with dummy nodes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/Berlin_PoIs.json" />
@@ -314,13 +502,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/043f1a9b-d452-4f07-807c-6f2f8ed5fd3c/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/local/java/jdk1.8.0_191/src.zip!/java/text/MessageFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -328,12 +509,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+        <state relative-caret-position="290">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/violina/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/POI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/DijkstraAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="e#2400#2408#0" expanded="true" />
+            <element signature="e#5515#5516#0" expanded="true" />
+            <element signature="e#3623#3631#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/violina/NearestNeighbor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/violina/TestDijkstraAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="115" column="33" lean-forward="true" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#452#639#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
           </folding>
         </state>
       </provider>
