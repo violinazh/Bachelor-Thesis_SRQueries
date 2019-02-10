@@ -46,7 +46,7 @@ public class DijkstraAlgorithm {
         while (unSettledNodes.size() > 0) {
             Vertex node = getMinimum(unSettledNodes);
 
-            // the node is eligible for type check
+            // the node is eligible for type check; shortest path to this node has been found
             for (POI poi : node.getPOIs()) {
                 switch(poi.getType()) {
                     case "restaurant":

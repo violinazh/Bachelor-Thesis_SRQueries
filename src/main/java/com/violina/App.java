@@ -55,7 +55,7 @@ public class App implements AutoCloseable
 
             String query = session.writeTransaction( new TransactionWork<String>()
             {
-
+                // For every c.id as parameter while count(poitype) < 6 iterate over the endpoint distance parameter
                 String string = MessageFormat.format("MATCH poipath = (c1:CROSSROAD)-[r:ROAD*0..{0}]->(c2:CROSSROAD)-->(p:POI) " +
                         "WHERE c1.id = 178732 " +
                         "WITH c1, p, reduce(total=0, h in relationships(poipath) | total + h.distance) AS totalCost " +
@@ -76,7 +76,7 @@ public class App implements AutoCloseable
 
     public static void main( String[] args ) throws Exception {
 
-        String database = "/home/vzh/Downloads/neo4j-community-3.5.0/data/databases/neo4j-berlin.db";
+        String database = "resources/berlin.db";
 
         System.out.println("Hello!");
         // Testing the Neo4j server
