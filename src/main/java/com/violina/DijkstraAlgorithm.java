@@ -25,6 +25,7 @@ public class DijkstraAlgorithm {
         this.nodes = new ArrayList<Vertex>(graph.getVertexes());
         this.edges = new ArrayList<Edge>(graph.getEdges());
 
+        // Initializing the table
         for (int row = 0; row < table.length; row ++)
             for (int col = 0; col < table[row].length; col++)
                 table[row][col] = new NearestNeighbor(7777, 0, 0);
@@ -44,9 +45,9 @@ public class DijkstraAlgorithm {
         distance.put(source, 0.0);
         unSettledNodes.add(source);
         while (unSettledNodes.size() > 0) {
-            Vertex node = getMinimum(unSettledNodes);
+            Vertex node = getMinimum(unSettledNodes); // the node is eligible for type check; shortest path to this node has been found
 
-            // the node is eligible for type check; shortest path to this node has been found
+            // Creating the table
             for (POI poi : node.getPOIs()) {
                 switch(poi.getType()) {
                     case "restaurant":
@@ -54,7 +55,7 @@ public class DijkstraAlgorithm {
                             table[sid][0].setVID(node.getVID());
                             table[sid][0].setPID(poi.getPID());
                             table[sid][0].setDist(distance.get(node));
-                            System.out.println("found a restaurant " + table[sid][0]);
+                            //System.out.println("found a restaurant " + table[sid][0]);
                         }
                         break;
                     case "coffee_shop":
@@ -62,26 +63,51 @@ public class DijkstraAlgorithm {
                             table[sid][1].setVID(node.getVID());
                             table[sid][1].setPID(poi.getPID());
                             table[sid][1].setDist(distance.get(node));
-                            System.out.println("found a coffee shop " + table[sid][1]);
+                            //System.out.println("found a coffee shop " + table[sid][1]);
                         }
                         break;
-                    case "pub":
+                    case "atm_bank":
                         if (table[sid][2].getPID() == 7777) {
                             table[sid][2].setVID(node.getVID());
                             table[sid][2].setPID(poi.getPID());
                             table[sid][2].setDist(distance.get(node));
-                            System.out.println("found a pub " + table[sid][2]);
+                            //System.out.println("found a pub " + table[sid][2]);
                         }
                         break;
-                    case "pharmacy":
+                    case "movie_theater":
                         if (table[sid][3].getPID() == 7777) {
                             table[sid][3].setVID(node.getVID());
                             table[sid][3].setPID(poi.getPID());
                             table[sid][3].setDist(distance.get(node));
-                            System.out.println("found a pharmacy " + table[sid][3]);                        }
+                            //System.out.println("found a movie theater " + table[sid][3]);
+                        }
+                        break;
+                    case "pharmacy":
+                        if (table[sid][4].getPID() == 7777) {
+                            table[sid][4].setVID(node.getVID());
+                            table[sid][4].setPID(poi.getPID());
+                            table[sid][4].setDist(distance.get(node));
+                            //System.out.println("found a pharmacy " + table[sid][4]);
+                        }
+                        break;
+                    case "pub_bar":
+                        if (table[sid][5].getPID() == 7777) {
+                            table[sid][5].setVID(node.getVID());
+                            table[sid][5].setPID(poi.getPID());
+                            table[sid][5].setDist(distance.get(node));
+                            //System.out.println("found a pub/bar " + table[sid][5]);
+                        }
+                        break;
+                    case "gas_station":
+                        if (table[sid][6].getPID() == 7777) {
+                            table[sid][6].setVID(node.getVID());
+                            table[sid][6].setPID(poi.getPID());
+                            table[sid][6].setDist(distance.get(node));
+                            //System.out.println("found a gas station " + table[sid][6]);
+                        }
                         break;
                     default:
-                        System.out.println("Found nothing.");
+                        //System.out.println("Found nothing.");
                         break;
 
                 }

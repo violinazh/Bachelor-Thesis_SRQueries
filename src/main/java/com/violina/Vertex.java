@@ -1,13 +1,10 @@
 package com.violina;
 
-import java.util.List;
 import java.util.PriorityQueue;
 
 public class Vertex {
 
     final private int vid;
-    //private final List<POI> pois;
-
     private PriorityQueue<POI> pois;
 
 

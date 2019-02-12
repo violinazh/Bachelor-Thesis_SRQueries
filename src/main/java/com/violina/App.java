@@ -1,9 +1,17 @@
 package com.violina;
 
-import org.neo4j.driver.v1.*;
-import org.neo4j.driver.v1.Transaction;
+//import org.neo4j.driver.v1.*;
+//import org.neo4j.driver.v1.Transaction;
+import java.io.File;
+import java.io.IOException;
+
+import org.neo4j.graphdb.*;
+import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.neo4j.io.fs.FileUtils;
+
 
 import java.text.MessageFormat;
+import java.util.*;
 
 import static org.neo4j.driver.v1.Values.parameters;
 
@@ -11,9 +19,10 @@ import static org.neo4j.driver.v1.Values.parameters;
  *
  *
  */
-public class App implements AutoCloseable
+public class App
 {
 
+    /*
     private final Driver driver;
 
     public App( String uri, String user, String password )
@@ -85,10 +94,50 @@ public class App implements AutoCloseable
             //greeter.printGreeting( "hello, world" );
             greeter.findNeighbors(30);
         }
+    }*/
 
+    // Maybe we need to copy the contents of Importer
+    static List<Vertex> nodes = new ArrayList<Vertex>();
+    static List<Edge> edges = new ArrayList<Edge>();
 
+    public static void main( String[] args ) throws Exception {
 
+        Importer test = new Importer();
+        test.startDB();
+        test.importGraph();
+        test.shutDown();
 
+        /*System.out.println("Vertices:");
+        for (Vertex vertex : test.nodes) {
+            System.out.println(vertex);
+        }
+
+        System.out.println("\nEdges:");
+        for (Edge edge : test.edges) {
+            System.out.println(edge);
+        }*/
+
+        //System.out.println("\nGraph:");
+        Graph graph = new Graph(test.nodes, test.edges);
+        //System.out.println(graph);
+
+        // Testing dijkstra
+        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
+
+        // Executing dijkstra for every vertex to fill the table
+        dijkstra.execute(graph.getVertexes().get(0));
+
+        // Testing the table
+        System.out.println("\n");
+        NearestNeighbor [][] table = dijkstra.getTable();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(table[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
+
 
 }
