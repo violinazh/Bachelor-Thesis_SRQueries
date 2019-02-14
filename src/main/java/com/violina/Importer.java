@@ -42,7 +42,7 @@ public class Importer {
         // tag::transaction[]
         try (Transaction tx = graphDb.beginTx()) {
 
-            // Testing the edges
+            // Importing the edges; for now we have sample data
             for (int i = 0; i < 10; i++) {
                 addEdge(i);
             }
@@ -100,6 +100,7 @@ public class Importer {
 
         //System.out.println(start.getProperty("id") + " " + end.getProperty("id") + ", dist: " + distance);
 
+        // Importing the vertices
         Vertex s = addVertex(start);
         Vertex e = addVertex(end);
 
