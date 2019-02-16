@@ -3,6 +3,7 @@ package com.violina;
 //import org.neo4j.driver.v1.*;
 //import org.neo4j.driver.v1.Transaction;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.neo4j.graphdb.*;
@@ -103,9 +104,9 @@ public class App
         return s;
     }
 
-    // Inserts the whole table into the db (Format for entry: pid:vid:dist); for now we have sample data
+    // Inserts the whole table into the db (Format for entry: pid:vid:dist)
     public void insertTable (NearestNeighbor [][] table) {
-        for (int i = 0; i < 3; i++) { // column - for every vid
+        for (int i = 0; i < table.length; i++) { // column - for every vid
             String r = table[i][0].getPID() + ":" + table[i][0].getVID() + ":" + table[i][0].getDist();
             String cs = table[i][1].getPID() + ":" + table[i][1].getVID() + ":" + table[i][1].getDist();
             String ab = table[i][2].getPID() + ":" + table[i][2].getVID() + ":" + table[i][2].getDist();
@@ -116,6 +117,26 @@ public class App
 
             insertRow(i, r, cs, ab, mt, ph, pb, gs);
         }
+        System.out.println("Inserted the table to the database.");
+    }
+
+    private static void writeToFile(String data) {
+        File file = new File("src/main/resources/table.txt");
+        FileWriter fr = null;
+        try {
+            fr = new FileWriter(file);
+            fr.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            //close resources
+            try {
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Wrote the table to a file.");
     }
 
     // Parses an entry from the database
@@ -153,6 +174,7 @@ public class App
 
 
         // Starting the importer
+        System.out.println("--- Importing the graph from Neo4j");
         Importer importer = new Importer();
         importer.startDB();
         importer.importGraph();
@@ -178,26 +200,35 @@ public class App
         //System.out.println(graph);
 
         // Building dijkstra
+        System.out.println("\n--- Building Dijkstra");
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 
-        // Executing dijkstra for every vertex to fill the table; for now we have sample data
-        for (int i = 0; i < 10; i++) {
-            dijkstra.execute(graph.getVertexes().get(i));
+        // Executing dijkstra for every vertex to fill the table
+        System.out.println("\n--- Executing Dijkstra for every vertex");
+        for (Vertex node: graph.getVertexes()) { // 428769
+            System.out.println("\nNode: " + node);
+            dijkstra.execute(node);
         }
-        NearestNeighbor [][] table = dijkstra.getTable();
+        System.out.println("\nDijkstra execution done.");
 
         // Testing the table; for every element in the table we put it in a database
-        /*System.out.println("\n");
-        NearestNeighbor [][] table = dijkstra.getTable();
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(table[i][j] + " ");
+        System.out.println("\n--- Building the string");
+        String t = "";
+        for (int i = 0; i < dijkstra.getTable().length; i++) {
+            System.out.println(i);
+            for (int j = 0; j < dijkstra.getTable()[i].length; j++) {
+                t += dijkstra.getTable()[i][j] + " ";
             }
-            System.out.println();
-        }*/
+            t += "\n";
+        }
+        //System.out.println(t);
+        System.out.println("\n--- Writing the table to a file");
+        writeToFile(t);
 
         App app = new App();
-        app.insertTable(table);
+        System.out.println("\n--- Importing the table to the database");
+        app.insertTable(dijkstra.getTable());
+
 
         //String s = app.selectEntry("coffee_shop",1);
         //System.out.println(app.parseDist(s));

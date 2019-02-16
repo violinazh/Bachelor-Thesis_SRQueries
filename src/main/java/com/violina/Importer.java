@@ -42,8 +42,8 @@ public class Importer {
         // tag::transaction[]
         try (Transaction tx = graphDb.beginTx()) {
 
-            // Importing the edges; for now we have sample data
-            for (int i = 0; i < 10; i++) {
+            // Importing the edges
+            for (int i = 0; i < 504229; i++) { // 504229
                 addEdge(i);
             }
 
@@ -58,6 +58,7 @@ public class Importer {
             // tag::transaction[]
             tx.success();
         }
+        System.out.println("Graph imported.");
         // end::transaction[]
     }
 

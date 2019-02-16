@@ -1,20 +1,23 @@
 package com.violina;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class DijkstraAlgorithm {
 
     private final List<Vertex> nodes;
     private final List<Edge> edges;
     private Set<Vertex> settledNodes;
-    private Set<Vertex> unSettledNodes;
+    //private Set<Vertex> unSettledNodes;
+    private int initialCapacity = 15;
+    private Comparator<Vertex> comparator = new Comparator<Vertex>() {
+
+        @Override
+        public int compare(Vertex e1, Vertex e2) {
+            return Double.compare(getShortestDistance(e1), getShortestDistance(e2));
+        }
+
+    };
+    private PriorityQueue<Vertex> unSettledNodes = new PriorityQueue<Vertex>(initialCapacity, comparator);
     private Map<Vertex, Vertex> predecessors;
     private Map<Vertex, Double> distance;
 
@@ -37,16 +40,19 @@ public class DijkstraAlgorithm {
 
     public void execute(Vertex source) {
         int sid = source.getVID(); // added this for easy table entries
+        System.out.println("-Executing for vertex: " + sid);
+        int counter = 0;
 
         settledNodes = new HashSet<Vertex>();
-        unSettledNodes = new HashSet<Vertex>();
+        //unSettledNodes = new HashSet<Vertex>();
         distance = new HashMap<Vertex, Double>();
         predecessors = new HashMap<Vertex, Vertex>();
         distance.put(source, 0.0);
         unSettledNodes.add(source);
-        while (unSettledNodes.size() > 0) {
-            Vertex node = getMinimum(unSettledNodes); // the node is eligible for type check; shortest path to this node has been found
-
+        while (unSettledNodes.size() > 0 && counter < 7) {
+            //Vertex node = getMinimum(unSettledNodes); // the node is eligible for type check; shortest path to this node has been found
+            Vertex node = unSettledNodes.poll();
+            System.out.println("-Checking node for neighbors: " + node);
             // Creating the table
             for (POI poi : node.getPOIs()) {
                 switch(poi.getType()) {
@@ -55,7 +61,8 @@ public class DijkstraAlgorithm {
                             table[sid][0].setVID(node.getVID());
                             table[sid][0].setPID(poi.getPID());
                             table[sid][0].setDist(distance.get(node));
-                            //System.out.println("found a restaurant " + table[sid][0]);
+                            counter++;
+                            System.out.println("Found a restaurant " + table[sid][0]);
                         }
                         break;
                     case "coffee_shop":
@@ -63,7 +70,8 @@ public class DijkstraAlgorithm {
                             table[sid][1].setVID(node.getVID());
                             table[sid][1].setPID(poi.getPID());
                             table[sid][1].setDist(distance.get(node));
-                            //System.out.println("found a coffee shop " + table[sid][1]);
+                            counter++;
+                            System.out.println("Found a coffee shop " + table[sid][1]);
                         }
                         break;
                     case "atm_bank":
@@ -71,7 +79,8 @@ public class DijkstraAlgorithm {
                             table[sid][2].setVID(node.getVID());
                             table[sid][2].setPID(poi.getPID());
                             table[sid][2].setDist(distance.get(node));
-                            //System.out.println("found a pub " + table[sid][2]);
+                            counter++;
+                            System.out.println("Found an atm/bank " + table[sid][2]);
                         }
                         break;
                     case "movie_theater":
@@ -79,7 +88,8 @@ public class DijkstraAlgorithm {
                             table[sid][3].setVID(node.getVID());
                             table[sid][3].setPID(poi.getPID());
                             table[sid][3].setDist(distance.get(node));
-                            //System.out.println("found a movie theater " + table[sid][3]);
+                            counter++;
+                            System.out.println("Found a movie theater " + table[sid][3]);
                         }
                         break;
                     case "pharmacy":
@@ -87,7 +97,8 @@ public class DijkstraAlgorithm {
                             table[sid][4].setVID(node.getVID());
                             table[sid][4].setPID(poi.getPID());
                             table[sid][4].setDist(distance.get(node));
-                            //System.out.println("found a pharmacy " + table[sid][4]);
+                            counter++;
+                            System.out.println("Found a pharmacy " + table[sid][4]);
                         }
                         break;
                     case "pub_bar":
@@ -95,7 +106,8 @@ public class DijkstraAlgorithm {
                             table[sid][5].setVID(node.getVID());
                             table[sid][5].setPID(poi.getPID());
                             table[sid][5].setDist(distance.get(node));
-                            //System.out.println("found a pub/bar " + table[sid][5]);
+                            counter++;
+                            System.out.println("Found a pub/bar " + table[sid][5]);
                         }
                         break;
                     case "gas_station":
@@ -103,18 +115,19 @@ public class DijkstraAlgorithm {
                             table[sid][6].setVID(node.getVID());
                             table[sid][6].setPID(poi.getPID());
                             table[sid][6].setDist(distance.get(node));
-                            //System.out.println("found a gas station " + table[sid][6]);
+                            counter++;
+                            System.out.println("Found a gas station " + table[sid][6]);
                         }
                         break;
                     default:
-                        //System.out.println("Found nothing.");
+                        System.out.println("Found nothing.");
                         break;
 
                 }
             }
 
             settledNodes.add(node);
-            unSettledNodes.remove(node);
+            //unSettledNodes.remove(node);
             findMinimalDistances(node);
         }
     }

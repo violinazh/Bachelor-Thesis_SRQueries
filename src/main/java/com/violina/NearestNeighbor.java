@@ -38,6 +38,6 @@ public class NearestNeighbor {
 
     @Override
     public String toString() {
-        return "[" + pid + ", " + vid + ", " + dist + "]";
+        return pid + ":" + vid + ":" + dist;
     }
 }

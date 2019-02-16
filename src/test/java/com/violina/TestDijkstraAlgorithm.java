@@ -1,5 +1,8 @@
 package com.violina;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 import org.junit.Test;
@@ -100,21 +103,23 @@ public class TestDijkstraAlgorithm {
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 
         // Executing dijkstra for every vertex to fill the table
-        dijkstra.execute(nodes.get(0));
-        dijkstra.execute(nodes.get(1));
-        dijkstra.execute(nodes.get(2));
-        dijkstra.execute(nodes.get(3));
-        dijkstra.execute(nodes.get(4));
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Executing Dijkstra for node: " + i);
+            dijkstra.execute(nodes.get(i));
+        }
 
         // Testing the table
         System.out.println("\n");
         NearestNeighbor [][] table = dijkstra.getTable();
+        String t = "";
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
-                System.out.print(table[i][j] + " ");
+                t += table[i][j] + " ";
             }
-            System.out.println();
+            t+= "\n";
         }
+        System.out.println(t);
+        writeToFile(t);
 
         // This part is not needed for table creation
         LinkedList<Vertex> path = dijkstra.getPath(nodes.get(3));
@@ -128,4 +133,24 @@ public class TestDijkstraAlgorithm {
         }
 
     }
+
+    private static void writeToFile(String data) {
+        File file = new File("src/main/resources/table_test.txt");
+        FileWriter fr = null;
+        try {
+            fr = new FileWriter(file);
+            fr.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            //close resources
+            try {
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Wrote the table to a file.");
+    }
+
 }
