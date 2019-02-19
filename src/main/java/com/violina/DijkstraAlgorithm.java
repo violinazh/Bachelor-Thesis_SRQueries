@@ -40,7 +40,7 @@ public class DijkstraAlgorithm {
 
     public void execute(Vertex source) {
         int sid = source.getVID(); // added this for easy table entries
-        System.out.println("-Executing for vertex: " + sid);
+        System.out.println("Executing Dijsktra for vertex: " + sid);
         int counter = 0;
 
         settledNodes = new HashSet<Vertex>();
@@ -52,7 +52,7 @@ public class DijkstraAlgorithm {
         while (unSettledNodes.size() > 0 && counter < 7) {
             //Vertex node = getMinimum(unSettledNodes); // the node is eligible for type check; shortest path to this node has been found
             Vertex node = unSettledNodes.poll();
-            System.out.println("-Checking node for neighbors: " + node);
+            //System.out.println("-Checking node for neighbors: " + node);
             // Creating the table
             for (POI poi : node.getPOIs()) {
                 switch(poi.getType()) {
@@ -63,6 +63,7 @@ public class DijkstraAlgorithm {
                             table[sid][0].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a restaurant " + table[sid][0]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "coffee_shop":
@@ -72,6 +73,7 @@ public class DijkstraAlgorithm {
                             table[sid][1].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a coffee shop " + table[sid][1]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "atm_bank":
@@ -81,6 +83,7 @@ public class DijkstraAlgorithm {
                             table[sid][2].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found an atm/bank " + table[sid][2]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "movie_theater":
@@ -90,6 +93,7 @@ public class DijkstraAlgorithm {
                             table[sid][3].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a movie theater " + table[sid][3]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "pharmacy":
@@ -99,6 +103,7 @@ public class DijkstraAlgorithm {
                             table[sid][4].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a pharmacy " + table[sid][4]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "pub_bar":
@@ -108,6 +113,7 @@ public class DijkstraAlgorithm {
                             table[sid][5].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a pub/bar " + table[sid][5]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     case "gas_station":
@@ -117,6 +123,7 @@ public class DijkstraAlgorithm {
                             table[sid][6].setDist(distance.get(node));
                             counter++;
                             System.out.println("Found a gas station " + table[sid][6]);
+                            System.out.println("Counter: " + counter);
                         }
                         break;
                     default:

@@ -205,9 +205,11 @@ public class App
 
         // Executing dijkstra for every vertex to fill the table
         System.out.println("\n--- Executing Dijkstra for every vertex");
+        int c = 0;
         for (Vertex node: graph.getVertexes()) { // 428769
-            System.out.println("\nNode: " + node);
+            System.out.println("\n-Node: " + c);
             dijkstra.execute(node);
+            c++;
         }
         System.out.println("\nDijkstra execution done.");
 
