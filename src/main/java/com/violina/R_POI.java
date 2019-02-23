@@ -23,4 +23,9 @@ public class R_POI {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "(" + pid + ", " + vid + ", " + type + ")";
+    }
 }

@@ -24,7 +24,22 @@ public class Route {
         pois.add(poi);
     }
 
+    public void setLength(double length) {
+        this.length += length;
+    }
+
     public void removeRpoi(int index) {
         pois.remove(index);
+    }
+
+    @Override
+    public String toString() {
+        String string = "POIs: ";
+        for (R_POI poi : pois) {
+            string += poi + ", ";
+        }
+        string += "Length: " + length;
+
+        return string;
     }
 }

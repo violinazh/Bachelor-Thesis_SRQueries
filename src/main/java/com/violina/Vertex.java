@@ -22,6 +22,18 @@ public class Vertex {
     }
 
     @Override
+    public String toString() {
+        return "" + vid + ", " + pois;
+    }
+
+
+    @Override
+    public int hashCode()
+    {
+        return Integer.toString(vid).hashCode();
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
@@ -32,10 +44,4 @@ public class Vertex {
         Vertex other = (Vertex) obj;
         return vid == other.vid;
     }
-
-    @Override
-    public String toString() {
-        return "" + vid + ", " + pois;
-    }
-
 }

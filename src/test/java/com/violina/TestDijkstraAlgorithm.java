@@ -74,20 +74,20 @@ public class TestDijkstraAlgorithm {
         // Testing the edges, !!! should add both directions
         Edge lane1 = new Edge(nodes.get(0), nodes.get(1), 8.35);
         edges.add(lane1);
-        Edge lane11 = new Edge(nodes.get(1), nodes.get(0), 8.35);
-        edges.add(lane11);
+        //Edge lane11 = new Edge(nodes.get(1), nodes.get(0), 8.35);
+        //edges.add(lane11);
         Edge lane2 = new Edge(nodes.get(0), nodes.get(4), 5.5);
         edges.add(lane2);
-        Edge lane22 = new Edge(nodes.get(4), nodes.get(0), 5.5);
-        edges.add(lane22);
+        //Edge lane22 = new Edge(nodes.get(4), nodes.get(0), 5.5);
+        //edges.add(lane22);
         Edge lane3 = new Edge(nodes.get(1), nodes.get(3), 6.78);
         edges.add(lane3);
-        Edge lane33 = new Edge(nodes.get(3), nodes.get(1), 6.78);
-        edges.add(lane33);
+        //Edge lane33 = new Edge(nodes.get(3), nodes.get(1), 6.78);
+        //edges.add(lane33);
         Edge lane4 = new Edge(nodes.get(4), nodes.get(3), 4.3);
         edges.add(lane4);
-        Edge lane44 = new Edge(nodes.get(3), nodes.get(4), 4.3);
-        edges.add(lane44);
+        //Edge lane44 = new Edge(nodes.get(3), nodes.get(4), 4.3);
+        //edges.add(lane44);
 
         /*System.out.println("\nEdges:");
         for (Edge edge : edges) {
@@ -131,6 +131,20 @@ public class TestDijkstraAlgorithm {
         for (Vertex vertex : path) {
             System.out.println(vertex);
         }
+
+        /*Graph<Vertex, Edge> g = new SimpleWeightedGraph<Vertex, Edge>(Edge.class);
+        for (Vertex vertex : nodes) {
+            g.addVertex(vertex);
+        }
+        for (Edge edge : edges) {
+            g.addEdge(edge.getSource(), edge.getDestination(), edge);
+            g.setEdgeWeight(edge.getSource(), edge.getDestination(), edge.getDistance());
+        }
+        DijkstraShortestPath<Vertex, Edge> dijkstra =
+                new DijkstraShortestPath<>(g);
+        ShortestPathAlgorithm.SingleSourcePaths<Vertex, Edge> iPaths = dijkstra.getPaths(nodes.get(3));
+        System.out.println(iPaths.getPath(nodes.get(0)) + "\n");*/
+
 
     }
 

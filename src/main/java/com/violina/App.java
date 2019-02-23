@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.jgrapht.alg.interfaces.ShortestPathAlgorithm;
+import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
+import org.jgrapht.graph.SimpleWeightedGraph;
 import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.neo4j.io.fs.FileUtils;
@@ -203,8 +206,23 @@ public class App
         System.out.println("\n--- Building Dijkstra");
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 
+        org.jgrapht.Graph<Vertex, Edge> g = new SimpleWeightedGraph<Vertex, Edge>(Edge.class);
+        for (Vertex vertex : importer.nodes) {
+            g.addVertex(vertex);
+        }
+        for (Edge edge : importer.edges) {
+            g.addEdge(edge.getSource(), edge.getDestination(), edge);
+            g.setEdgeWeight(edge.getSource(), edge.getDestination(), edge.getDistance());
+        }
+        System.out.println("Build the Jgrapht");
+
+        DijkstraShortestPath<Vertex, Edge> d =
+                new DijkstraShortestPath<>(g);
+        ShortestPathAlgorithm.SingleSourcePaths<Vertex, Edge> iPaths = d.getPaths(importer.nodes.get(357963));
+        System.out.println(iPaths.getPath(importer.nodes.get(318316)) + "\n");
+
         // Executing dijkstra for every vertex to fill the table
-        System.out.println("\n--- Executing Dijkstra for every vertex");
+        /*System.out.println("\n--- Executing Dijkstra for every vertex");
         int c = 0;
         for (Vertex node: graph.getVertexes()) { // 428769
             System.out.println("\n-Node: " + c);
@@ -233,7 +251,7 @@ public class App
 
 
         //String s = app.selectEntry("coffee_shop",1);
-        //System.out.println(app.parseDist(s));
+        //System.out.println(app.parseDist(s));*/
 
     }
 

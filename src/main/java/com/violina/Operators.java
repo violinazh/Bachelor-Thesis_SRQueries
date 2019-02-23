@@ -43,12 +43,17 @@ public class Operators {
         Route candidate = new Route(new ArrayList<R_POI>(), 0);
 
         Route current = heap.poll();
+        System.out.println("DEBUG | First route: \n" + current);
+
         while (current.getPois().size() < categories.size()) {
 
             // (a)
             Route newA = modifyRouteA(current);
+            System.out.println("DEBUG | Modified route: \n" + newA);
+            heap.add(newA);
+
             // Trimming (only one candidate PSR on the heap)
-            if (newA.getPois().size() == categories.size()) {
+            /*if (newA.getPois().size() == categories.size()) {
                 if (candidate.getLength() == 0) {
                     candidate = newA;
                     heap.add(newA);
@@ -58,12 +63,12 @@ public class Operators {
                 } else {
                     // We don't add the new PSR
                 }
-            }
+            }*/
 
             // (b)
-            Route newB = modifyRouteB(current);
+            //Route newB = modifyRouteB(current);
             // Trimming (only one candidate PSR on the heap)
-            if (newB.getPois().size() == categories.size()) {
+            /*if (newB.getPois().size() == categories.size()) {
                 if (candidate.getLength() == 0) {
                     candidate = newB;
                     heap.add(newB);
@@ -73,7 +78,7 @@ public class Operators {
                 } else {
                     // We don't add the new PSR
                 }
-            }
+            }*/
 
             current = heap.poll();
         }
@@ -81,26 +86,29 @@ public class Operators {
         return current;
     }
 
-    public Route modifyRouteA(Route r) {
+    private Route modifyRouteA(Route r) {
         Route route = new Route(r.getPois(), r.getLength());
         NearestNeighbor nn = getNN(route.getPois().get(route.getPois().size() - 1).getVid(),
                 categories.get(route.getPois().size()));
+        System.out.println("DEBUG | Next nn: " + nn);
         R_POI rpoi = new R_POI(nn.getPID(), nn.getVID(), categories.get(route.getPois().size()));
         route.addRpoi(rpoi);
+        route.setLength(nn.getDist());
         return route;
     }
 
-    public Route modifyRouteB(Route r) {
+    private Route modifyRouteB(Route r) {
         Route route = new Route(r.getPois(), r.getLength());
         NearestNeighbor nn = getNN(route.getPois().get(route.getPois().size() - 2).getVid(),
                 categories.get(route.getPois().size() - 1));
         R_POI rpoi = new R_POI(nn.getPID(), nn.getVID(), categories.get(route.getPois().size()));
         route.removeRpoi(route.getPois().size() - 1);
         route.addRpoi(rpoi);
+        route.setLength(nn.getDist());
         return route;
     }
 
-    public NearestNeighbor getNN(int vid, String category) {
+    private NearestNeighbor getNN(int vid, String category) {
         return table[vid][translateType(category)];
     }
 

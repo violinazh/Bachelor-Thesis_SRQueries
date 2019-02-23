@@ -29,4 +29,16 @@ public class Edge {
         return source + " -> " + destination + " : " + distance;
     }
 
+    @Override
+    public int hashCode()
+    {
+        return toString().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        return (o instanceof Edge) && (toString().equals(o.toString()));
+    }
+
 }

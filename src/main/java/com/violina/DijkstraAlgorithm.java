@@ -40,8 +40,9 @@ public class DijkstraAlgorithm {
 
     public void execute(Vertex source) {
         int sid = source.getVID(); // added this for easy table entries
-        System.out.println("Executing Dijsktra for vertex: " + sid);
+        //System.out.println("Executing Dijkstra for vertex: " + sid);
         int counter = 0;
+        int i = 0; // for test
 
         settledNodes = new HashSet<Vertex>();
         //unSettledNodes = new HashSet<Vertex>();
@@ -50,9 +51,10 @@ public class DijkstraAlgorithm {
         distance.put(source, 0.0);
         unSettledNodes.add(source);
         while (unSettledNodes.size() > 0 && counter < 7) {
+            i++;
             //Vertex node = getMinimum(unSettledNodes); // the node is eligible for type check; shortest path to this node has been found
             Vertex node = unSettledNodes.poll();
-            //System.out.println("-Checking node for neighbors: " + node);
+            System.out.println("*Checking node for neighbors: " + node);
             // Creating the table
             for (POI poi : node.getPOIs()) {
                 switch(poi.getType()) {
@@ -137,6 +139,7 @@ public class DijkstraAlgorithm {
             //unSettledNodes.remove(node);
             findMinimalDistances(node);
         }
+        System.out.println("Number of visited nodes:" + i);
     }
 
     private void findMinimalDistances(Vertex node) {
