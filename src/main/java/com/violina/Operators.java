@@ -1,7 +1,5 @@
 package com.violina;
 
-import org.scalacheck.Gen;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

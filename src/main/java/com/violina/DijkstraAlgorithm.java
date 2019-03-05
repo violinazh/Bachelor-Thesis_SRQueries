@@ -158,8 +158,9 @@ public class DijkstraAlgorithm {
 
     private double getDistance(Vertex node, Vertex target) {
         for (Edge edge : edges) {
-            if (edge.getSource().equals(node)
-                    && edge.getDestination().equals(target)) {
+            if ((edge.getSource().equals(node)
+                    && edge.getDestination().equals(target)) || (edge.getDestination().equals(node)
+                    && edge.getSource().equals(target))) {
                 return edge.getDistance();
             }
         }
@@ -172,6 +173,10 @@ public class DijkstraAlgorithm {
             if (edge.getSource().equals(node)
                     && !isSettled(edge.getDestination())) {
                 neighbors.add(edge.getDestination());
+            }
+            if (edge.getDestination().equals(node)
+                    && !isSettled(edge.getSource())) {
+                neighbors.add(edge.getSource());
             }
         }
         return neighbors;

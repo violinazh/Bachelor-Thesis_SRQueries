@@ -88,6 +88,8 @@ public class TestDijkstraAlgorithm {
         edges.add(lane4);
         //Edge lane44 = new Edge(nodes.get(3), nodes.get(4), 4.3);
         //edges.add(lane44);
+        Edge lane5 = new Edge(nodes.get(4), nodes.get(2), 3.2);
+        edges.add(lane5);
 
         /*System.out.println("\nEdges:");
         for (Edge edge : edges) {
@@ -103,13 +105,13 @@ public class TestDijkstraAlgorithm {
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 
         // Executing dijkstra for every vertex to fill the table
-        for (int i = 0; i < 5; i++) {
+        /*for (int i = 0; i < 5; i++) {
             System.out.println("Executing Dijkstra for node: " + i);
             dijkstra.execute(nodes.get(i));
-        }
+        }*/
 
         // Testing the table
-        System.out.println("\n");
+        /*System.out.println("\n");
         NearestNeighbor [][] table = dijkstra.getTable();
         String t = "";
         for (int i = 0; i < 5; i++) {
@@ -119,10 +121,11 @@ public class TestDijkstraAlgorithm {
             t+= "\n";
         }
         System.out.println(t);
-        writeToFile(t);
+        writeToFile(t);*/
 
         // This part is not needed for table creation
-        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(3));
+        dijkstra.execute(nodes.get(3));
+        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(0));
 
         assertNotNull(path);
         assertTrue(path.size() > 0);
